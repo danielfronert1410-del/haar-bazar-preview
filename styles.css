@@ -4,7 +4,8 @@
    Orientiert am Visitenkarten-Stil.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,700;1,900&family=Kaushan+Script&family=Special+Elite&family=Inter:wght@300;400;500;600&display=swap');
+/* Lokal gehostete Schriften — DSGVO-konform, keine Verbindung zu Google-Servern */
+@import url('fonts/fonts.css');
 
 :root {
   --wood-0: #17100B;
