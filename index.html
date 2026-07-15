@@ -133,6 +133,15 @@
           <h2>So findest du uns</h2>
           <p class="lead">Am schönsten ist es persönlich: Komm vorbei oder ruf kurz an. Deinen Termin machen wir in Ruhe am Telefon oder direkt bei uns im Salon.</p>
           <p class="note">Wir freuen uns auf dich!</p>
+
+          <div class="map" id="map" data-src="https://maps.google.com/maps?q=Urdenbacher%20Dorfstra%C3%9Fe%205%2C%2040593%20D%C3%BCsseldorf&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed">
+            <button class="map__ph" type="button" aria-label="Google-Karte für Urdenbacher Dorfstraße 5 laden">
+              <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              <span class="addr">Urdenbacher Dorfstr. 5 · 40593 Düsseldorf</span>
+              <span class="chip">Karte anzeigen ↗</span>
+              <small>Beim Laden der Karte werden Daten an Google Maps übertragen.</small>
+            </button>
+          </div>
         </div>
 
         <div class="plate reveal">
@@ -213,6 +222,19 @@
     }, { threshold: 0.14 });
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Google-Karte erst nach Klick laden (DSGVO / 2-Klick)
+    const mapBox = document.getElementById('map');
+    mapBox?.querySelector('.map__ph')?.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = mapBox.dataset.src;
+      f.title = 'Karte: HaaR-BazaR, Urdenbacher Dorfstraße 5, Düsseldorf';
+      f.loading = 'lazy';
+      f.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      f.setAttribute('allowfullscreen', '');
+      mapBox.innerHTML = '';
+      mapBox.appendChild(f);
+    });
   </script>
 
 </body>
