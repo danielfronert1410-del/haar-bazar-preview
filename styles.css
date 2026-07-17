@@ -222,5 +222,10 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .reveal, .scroll-cue, .marquee__track { animation: none !important; opacity: 1; transform: none; } }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 820px) { .finde-grid { grid-template-columns: 1fr; } .header-phone .label { display: none; } }
+@media (max-width: 820px) {
+  .finde-grid { grid-template-columns: 1fr; }
+  .header-phone .label { display: none; }
+  /* Handy/Hochformat: Ausschnitt auf die Frau (Gesicht/Ohr/Hals, links im Bild) statt Mitte, kräftiger */
+  .hero-video { object-position: 8% center; opacity: .5; }
+}
 @media (max-width: 520px) { .btn { padding: 14px 22px; } .badge { padding: 6px 26px; } .badge .laurel { width: 26px; } }
