@@ -88,7 +88,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 130px 0 90px; text-align: center; isolation: isolate; }
 /* blasses Hintergrund-Video (nur hinter dem Hero; beim Scrollen kommt das normale Design) */
-.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: .4; pointer-events: none; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: .48; pointer-events: none; }
 .hero::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   box-shadow: inset 0 0 150px 34px rgba(244,232,208,.55);
   background:
@@ -128,7 +128,7 @@ a { color: inherit; text-decoration: none; }
 /* blasses Foto als Sektions-Hintergrund (deckend, wie das Hero-Video) */
 .section--photo { overflow: hidden; }
 .section--photo::before { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background-size: cover; background-position: center; opacity: .14; }
+  background-size: cover; background-position: center; opacity: .24; }
 .section--photo > .wrap { position: relative; z-index: 1; }
 .section--salon::before { background-image: url('img/salon.jpg'); }
 .section--produkte::before { background-image: url('img/produkte.jpg'); }
@@ -239,6 +239,6 @@ a { color: inherit; text-decoration: none; }
   .finde-grid { grid-template-columns: 1fr; }
   .header-phone .label { display: none; }
   /* Handy/Hochformat: Ausschnitt auf die Frau (Gesicht/Ohr/Hals, links im Bild) statt Mitte, kräftiger */
-  .hero-video { object-position: 8% center; opacity: .55; }
+  .hero-video { object-position: 8% center; opacity: .62; }
 }
 @media (max-width: 520px) { .btn { padding: 14px 22px; } .badge { padding: 6px 26px; } .badge .laurel { width: 26px; } }
